@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Your description goes here" />
+    <meta name="keywords" content="one, two, three" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="description" content="Your description goes here">
-	<meta name="keywords" content="one, two, three">
+    <title>Mortal Kombat</title>
 
-	<title>Mortal Kombat</title>
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-	<!-- external CSS link -->
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
-</head>
+  <body>
+    <div class="titleScreenContainer">
+      <img
+        src="./assets/titleScreen.png"
+        alt="Mortal Kombat"
+        class="titleScreen"
+      />
+      <a href="#" class="pressPlay blink_me">Press Enter to Play</a>
+    </div>
+    <div class="arenaBackgroundContainer">
+      <i class="arrow left"></i>
+      <div class="characterSelectorContainer">
+        <div class="charaterSelectorWrapper">
+          <h1 class="characterSelectorTitle">CHOOSE YOUR FIGHTER</h1>
+          <ul class="characterWrapper">
+            <li>
+              <img
+                src="./assets/characters/Johnny Cage/johnnyCage.gif"
+                alt="Johnny Cage"
+                class="characterIcon iconBorder"
+                id="playerOneSelector"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/characters/Kano/kano.gif"
+                alt="Kano"
+                class="characterIcon iconBorder"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/dragon.gif"
+                alt="Dragon"
+                class="characterIcon"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/characters/Sub-Zero/subZero.gif"
+                alt="Sub-Zero"
+                class="characterIcon iconBorder"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/characters/Sonya/sonya.gif"
+                alt="Sonya"
+                class="characterIcon iconBorder"
+              />
+            </li>
+          </ul>
+          <ul class="characterWrapper">
+            <li>
+              <img
+                src="./assets/characters/Raiden/raiden.gif"
+                alt="Raiden"
+                class="characterIcon iconBorder"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/characters/Liu Kang/liuKang.gif"
+                alt="Liu Kang"
+                class="characterIcon iconBorder"
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/characters/Scorpion/scorpion.gif"
+                alt="Scorpion"
+                class="characterIcon iconBorder"
+              />
+            </li>
+          </ul>
+        </div>
 
-<body>
-	<div class="arenaBackgroundContainer">
-		<i class="arrow left"></i>
-		<div class="characterSelectorContainer">
-			<h1 class="characterSelectorTitle">CHOOSE YOUR FIGHTER</h1>
-			<ul class="characterWrapper">
-				<li>
-					<img src="./assets/characters/Johnny Cage/johnnyCage.gif" alt="Johnny Cage"
-						class="characterIcon iconBorder">
-				</li>
-				<li>
-					<img src="./assets/characters/Kano/kano.gif" alt="Kano" class="characterIcon iconBorder">
-				</li>
-				<li>
-					<img src="./assets/dragon.gif" alt="Dragon" class="characterIcon">
-				</li>
-				<li>
-					<img src="./assets/characters/Sub-Zero/subZero.gif" alt="Sub-Zero" class="characterIcon iconBorder">
-				</li>
-				<li>
-					<img src="./assets/characters/Sonya/sonya.gif" alt="Sonya" class="characterIcon iconBorder">
-				</li>
-			</ul>
-			<ul class="characterWrapper">
-				<li>
-					<img src="./assets/characters/Raiden/raiden.gif" alt="Raiden" class="characterIcon iconBorder">
-				</li>
-				<li>
-					<img src="./assets/characters/Liu Kang/liuKang.gif" alt="Liu Kang" class="characterIcon iconBorder">
-				</li>
-				<li>
-					<img src="./assets/characters/Scorpion/scorpion.gif" alt="Scorpion"
-						class="characterIcon iconBorder">
-				</li>
-			</ul>
-
-			<img src="assets/characters/Johnny Cage/johnnyCageAnimated.gif" alt="" class="playerOneSelection">
-			<img src="assets/characters/Sonya/sonyaAnimated.gif" alt="" class="cpuSelection">
-		</div>
-		<i class="arrow right"></i>
-	</div>
-	<script type="text/javascript" src="js/main.js"></script>
-</body>
-
+        <div class="playerSeleted">
+          <img
+            src="assets/characters/Johnny Cage/johnnyCageAnimated.gif"
+            alt=""
+            class="playerOneSelection"
+          />
+          <img
+            src="assets/characters/Sonya/sonyaAnimated.gif"
+            alt=""
+            class="cpuSelection"
+          />
+        </div>
+      </div>
+      <i class="arrow right"></i>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
 </html>
