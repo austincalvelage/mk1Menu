@@ -1,4 +1,6 @@
-const mkTheme = new Audio("../assets/sounds/mkTheme.mp3");
+const mkTheme = new Audio(
+  "https://github.com/austincalvelage/mk1Menu/raw/main/assets/sounds/mkTheme.mp3"
+);
 
 function pressEnterToPlay(event) {
   const titleScreenModal = document.querySelector(`.titleScreenContainer`);
