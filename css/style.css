@@ -18,28 +18,66 @@ html {
   box-sizing: border-box; /* IE */
 }
 
-/* Clear fix hack */
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+/******************************************
+/* ANIMATION STYLES
+/*******************************************/
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.clear {
-  clear: both;
+@keyframes playerOneBlinker {
+  0% {
+    border-color: rgba(0, 71, 171, 1);
+  }
+  49% {
+    border-color: rgba(0, 0, 0, 1);
+  }
+  50% {
+    border-color: rgba(0, 71, 171, 1);
+  }
+  99% {
+    border-color: rgba(0, 0, 0, 1);
+  }
+  100% {
+    border-color: rgba(0, 71, 171, 1);
+  }
 }
 
-.alignright {
-  float: right;
-  padding: 0 0 10px 10px; /* note the padding around a right floated image */
+@keyframes cpuBlinker {
+  0% {
+    border-color: rgba(255, 0, 0, 1);
+  }
+  49% {
+    border-color: rgba(0, 0, 0, 1);
+  }
+  50% {
+    border-color: rgba(255, 0, 0, 1);
+  }
+  99% {
+    border-color: rgba(0, 0, 0, 1);
+  }
+  100% {
+    border-color: rgba(255, 0, 0, 1);
+  }
 }
 
-.alignleft {
-  float: left;
-  padding: 0 10px 10px 0; /* note the padding around a left floated image */
+.blink_me {
+  animation: blinker 1s linear infinite;
 }
 
 /******************************************
@@ -66,7 +104,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  z-index: 9999;
+  z-index: 5;
 }
 
 .titleScreen {
@@ -85,38 +123,31 @@ body {
   font-weight: bold;
 }
 
-.blink_me {
-  animation: blinker 1s linear infinite;
-}
-
-@keyframes blinker {
-  0% {
-    color: lime;
-  }
-  49% {
-    color: transparent;
-  }
-  50% {
-    color: transparent;
-  }
-  99% {
-    color: transparent;
-  }
-  100% {
-    color: lime;
-  }
-}
-
 .arenaBackgroundContainer {
   height: 100%;
-  background-image: url(../assets/arena/01.png);
+  /* background-image: url(../assets/arena/01.png); */
   background-size: cover;
   background-position: center;
   background-repeat: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* opacity: 0; */
+}
+
+.muteBtn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(247, 245, 54);
+  text-shadow: #000 3px 3px;
+}
+
+.muteBtn:hover {
+  opacity: 0.5;
 }
 
 .arrow {
@@ -161,34 +192,70 @@ body {
 }
 
 .characterWrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
+  z-index: 3;
 }
 
 .characterWrapper li {
   height: 125px;
   width: 100px;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
 }
+
 .characterIcon {
-  height: 125px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
 }
 
 .iconBorder {
   border: 4px solid #000;
 }
 
-.playerSeleted {
+#playerOneCharacterSelector {
+  border: rgba(0, 71, 171, 1) solid 4px;
+  animation: playerOneBlinker 0.5s linear infinite;
+}
+
+.p1 {
+  position: relative;
+  bottom: 40px;
+  left: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(0, 71, 171, 1);
+  font-size: 1.6rem;
+  text-align: center;
+  color: white;
+}
+
+.cpu {
+  position: relative;
+  bottom: 40px;
+  left: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 1);
+  font-size: 1.6rem;
+  text-align: center;
+  color: white;
+}
+
+#cpuCharacterSelector {
+  border: rgba(255, 0, 0, 1) solid 4px;
+  animation: cpuBlinker 0.5s linear infinite;
+}
+
+.playersSelected {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 9998;
   position: relative;
-  bottom: 75px;
-  padding: 0 60px;
+  bottom: 125px;
+  z-index: 2;
 }
 
 .playerOneSelection,
@@ -197,4 +264,8 @@ body {
 }
 /******************************************
 /* ADDITIONAL STYLES
-/*******************************************/ ;
+/*******************************************/ 
+
+.hidden {
+  display: none;
+}
