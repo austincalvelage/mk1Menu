@@ -1,127 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Your description goes here" />
-    <meta name="keywords" content="one, two, three" />
 
-    <title>Mortal Kombat</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Your description goes here" />
+  <meta name="keywords" content="one, two, three" />
 
-    <!-- external CSS link -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <title>Mortal Kombat</title>
 
-  <body>
-    <div class="arenaBackgroundContainer">
-      <a href="#" class="muteBtn">MUTE</a>
-      <i class="arrow left"></i>
+  <!-- external CSS link -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-      <!-- Title Screen Modal Start -->
-      <div class="titleScreenModal">
-        <img
-          src="./assets/titleScreen.png"
-          alt="Mortal Kombat"
-          class="titleScreen"
-        />
-        <a href="#" class="pressPlay blink_me">Press Enter to Play</a>
-      </div>
-      <!-- Title Screen Modal End -->
+<body>
+  <div class="arenaBackgroundContainer">
+    <a href="#" class="muteBtn">MUTE</a>
+    <i class="arrow left"></i>
 
-      <div class="characterSelectorContainer">
-        <div class="charaterSelectorWrapper">
-          <h1 class="characterSelectorTitle">CHOOSE YOUR FIGHTER</h1>
-          <ul class="characterWrapper">
-            <li data-character="johnnyCage">
-              <img
-                src="./assets/characters/Johnny Cage/johnnyCage.gif"
-                alt="Johnny Cage"
-                class="characterIcon iconBorder"
-              />
+    <!-- Title Screen Modal Start -->
+    <div class="titleScreenModal">
+      <img src="./assets/titleScreen.png" alt="Mortal Kombat" class="titleScreen" />
+      <a href="#" class="pressPlay blink_me">Press Enter to Play</a>
+    </div>
+    <!-- Title Screen Modal End -->
+
+    <div class="characterSelectorContainer">
+      <div class="charaterSelectorWrapper">
+        <h1 class="characterSelectorTitle">CHOOSE YOUR FIGHTER</h1>
+        <ul class="characterWrapper">
+          <li class="playerOneCharacterSelector" data-character="johnnyCage">
+            <img src="./assets/characters/Johnny Cage/johnnyCage.gif" alt="Johnny Cage"
+              class="characterIcon iconBorder" />
+            <div class="playerIconContainer">
+              <span class="p1 show">P1</span>
+              <span class="cpu">C1</span>
+            </div>
+          </li>
+          <li data-character="kano">
+            <img src="./assets/characters/Kano/kano.gif" alt="Kano" class="characterIcon iconBorder" />
+            <div class="playerIconContainer">
               <span class="p1">P1</span>
               <span class="cpu">C1</span>
-            </li>
-            <li data-character="kano">
-              <img
-                src="./assets/characters/Kano/kano.gif"
-                alt="Kano"
-                class="characterIcon iconBorder"
-              />
+            </div>
+          </li>
+          <li>
+            <img src="./assets/dragon.gif" alt="Dragon" class="characterIcon dragon" />
+          </li>
+          <li data-character="subZero">
+            <img src="./assets/characters/Sub-Zero/subZero.gif" alt="Sub-Zero" class="characterIcon iconBorder" />
+            <div class="playerIconContainer">
               <span class="p1">P1</span>
               <span class="cpu">C1</span>
-            </li>
-            <li>
-              <img
-                src="./assets/dragon.gif"
-                alt="Dragon"
-                class="characterIcon dragon"
-              />
-            </li>
-            <li data-character="subZero">
-              <img
-                src="./assets/characters/Sub-Zero/subZero.gif"
-                alt="Sub-Zero"
-                class="characterIcon iconBorder"
-              />
+            </div>
+          </li>
+          <li data-character="sonya">
+            <img src="./assets/characters/Sonya/sonya.gif" alt="Sonya" class="characterIcon iconBorder"
+              id="cpuCharacterSelector" />
+            <div class="playerIconContainer">
+              <span class="p1">P1</span>
+              <span class="cpu show">C1</span>
+            </div>
+
+          </li>
+        </ul>
+        <ul class="characterWrapper">
+          <li data-character="raiden">
+            <img src="./assets/characters/Raiden/raiden.gif" alt="Raiden" class="characterIcon iconBorder" />
+            <div class="playerIconContainer">
               <span class="p1">P1</span>
               <span class="cpu">C1</span>
-            </li>
-            <li data-character="sonya">
-              <img
-                src="./assets/characters/Sonya/sonya.gif"
-                alt="Sonya"
-                class="characterIcon iconBorder"
-                id="cpuCharacterSelector"
-              />
+            </div>
+          </li>
+          <li data-character="liuKang">
+            <img src="./assets/characters/Liu Kang/liuKang.gif" alt="Liu Kang" class="characterIcon iconBorder" />
+            <div class="playerIconContainer">
               <span class="p1">P1</span>
               <span class="cpu">C1</span>
-            </li>
-          </ul>
-          <ul class="characterWrapper">
-            <li data-character="raiden">
-              <img
-                src="./assets/characters/Raiden/raiden.gif"
-                alt="Raiden"
-                class="characterIcon iconBorder"
-              />
+            </div>
+          </li>
+          <li data-character="scorpion">
+            <img src="./assets/characters/Scorpion/scorpion.gif" alt="Scorpion" class="characterIcon iconBorder" />
+            <div class="playerIconContainer">
               <span class="p1">P1</span>
               <span class="cpu">C1</span>
-            </li>
-            <li data-character="liuKang">
-              <img
-                src="./assets/characters/Liu Kang/liuKang.gif"
-                alt="Liu Kang"
-                class="characterIcon iconBorder"
-              />
-              <span class="p1">P1</span>
-              <span class="cpu">C1</span>
-            </li>
-            <li data-character="scorpion">
-              <img
-                src="./assets/characters/Scorpion/scorpion.gif"
-                alt="Scorpion"
-                class="characterIcon iconBorder"
-              />
-              <span class="p1">P1</span>
-              <span class="cpu">C1</span>
-            </li>
-          </ul>
-          <div class="playersSelected">
-            <img
-              src="assets/characters/Johnny Cage/johnnyCageAnimated.gif"
-              alt=""
-              class="playerOneSelection"
-            />
-            <img
-              src="assets/characters/Sonya/sonyaAnimated.gif"
-              alt=""
-              class="cpuSelection"
-            />
-          </div>
+            </div>
+          </li>
+        </ul>
+        <div class="playersSelected">
+          <img src="assets/characters/Johnny Cage/johnnyCageAnimated.gif" alt="" class="playerOneSelection" />
+          <img src="assets/characters/Sonya/sonyaAnimated.gif" alt="" class="cpuSelection" />
         </div>
       </div>
-      <i class="arrow right"></i>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
-  </body>
+    <i class="arrow right"></i>
+  </div>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>

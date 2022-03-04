@@ -4,44 +4,61 @@ const fighters = {
     characterIcon: "./assets/characters/Johnny Cage/johnnyCage.gif",
     animatedCharacter: "./assets/characters/Johnny Cage/johnnyCageAnimated.gif",
     audio: new Audio("./assets/characters/Johnny Cage/johnnyCage.mp3"),
+    lockedIn: false,
   },
   kano: {
     name: "Kano",
     characterIcon: "./assets/characters/Kano/kano.gif",
     animatedCharacter: "./assets/characters/Kano/kanoAnimated.gif",
     audio: new Audio("./assets/characters/Kano/kano.mp3"),
+    lockedIn: false,
   },
   subZero: {
     name: "Sub Zero",
     characterIcon: "./assets/characters/Sub-Zero/subZero.gif",
     animatedCharacter: "./assets/characters/Sub-Zero/subZeroAnimated.gif",
     audio: new Audio("./assets/characters/Sub-Zero/subZero.mp3"),
+    lockedIn: false,
   },
   sonya: {
     name: "Sonya",
     characterIcon: "./assets/characters/Sonya/sonya.gif",
     animatedCharacter: "./assets/characters/Sonya/sonyaAnimated.gif",
     audio: new Audio("./assets/characters/Sonya/sonya.mp3"),
+    lockedIn: false,
   },
   raiden: {
     name: "Raiden",
     characterIcon: "./assets/characters/Raiden/raiden.gif",
     animatedCharacter: "./assets/characters/Raiden/raidenAnimated.gif",
     audio: new Audio("./assets/characters/Raiden/raiden.mp3"),
+    lockedIn: false,
   },
   liuKang: {
     name: "Lui Kang",
     characterIcon: "./assets/characters/Liu Kang/liuKang.gif",
     animatedCharacter: "./assets/characters/Liu Kang/liuKangAnimated.gif",
     audio: new Audio("./assets/characters/Liu Kang/liuKang.mp3"),
+    lockedIn: false,
   },
   scorpion: {
     name: "Scorpion",
     characterIcon: "./assets/characters/Scorpion/scorpion.gif",
     animatedCharacter: "./assets/characters/Scorpion/scorpionAnimated.gif",
     audio: new Audio("./assets/characters/Scorpion/scorpion.mp3"),
+    lockedIn: false,
   },
 };
+
+const arenas = [
+  `url(./assets/arena/01.png)`,
+  `url(./assets/arena/02.png)`,
+  `url(./assets/arena/03.png)`,
+  `url(./assets/arena/04.png)`,
+  `url(./assets/arena/05.png)`,
+  `url(./assets/arena/06.png)`,
+  `url(./assets/arena/07.png)`,
+];
 
 function changeFighterGif(fighter) {
   const playerOneSelection = document.querySelector(`.playerOneSelection`);
@@ -80,9 +97,12 @@ function changeFighterGif(fighter) {
 }
 
 const muteBtn = document.querySelector(`.muteBtn`);
-
+const mkTheme = new Audio(`./assets/sounds/mkTheme.mp3`);
 const audioHandler = {
-  play: () => mkTheme.play(),
+  play: () => {
+    mkTheme.volume = 0.2;
+    mkTheme.play()
+  },
   mute: () => {
     if (mkTheme.paused) {
       muteBtn.classList.toggle(`blink_me`);
@@ -106,15 +126,7 @@ function pressEnterToPlay(event) {
 
 window.addEventListener(`keydown`, pressEnterToPlay);
 
-const arenas = [
-  `url(./assets/arena/01.png)`,
-  `url(./assets/arena/02.png)`,
-  `url(./assets/arena/03.png)`,
-  `url(./assets/arena/04.png)`,
-  `url(./assets/arena/05.png)`,
-  `url(./assets/arena/06.png)`,
-  `url(./assets/arena/07.png)`,
-];
+
 
 const currentArena = document.querySelector(`.arenaBackgroundContainer`);
 currentArena.style.backgroundImage = arenas[0];
@@ -123,8 +135,14 @@ function highlight(e) {
   if (e.currentTarget.childNodes[3] === undefined) {
     return;
   }
+  const defaultPlayer = document.querySelector(`li[data-character="johnnyCage"]`)
+  if (defaultPlayer.classList.contains(`playerOneCharacterSelector`)) {
+    defaultPlayer.classList.remove(`playerOneCharacterSelector`);
+    defaultPlayer.childNodes[3].childNodes[1].classList.remove('show');
+  }
+  e.currentTarget.style.pointerEvents = "none";
   e.currentTarget.classList.add(`playerOneCharacterSelector`);
-  e.currentTarget.childNodes[3].classList.add(`show`);
+  e.currentTarget.childNodes[3].childNodes[1].classList.add('show');
   changeFighterGif(e.currentTarget.dataset.character);
 }
 
@@ -140,6 +158,7 @@ playerOneSelection.forEach((character) =>
       return;
     }
     e.currentTarget.classList.remove(`playerOneCharacterSelector`);
-    e.currentTarget.childNodes[3].classList.remove(`show`);
+    e.currentTarget.childNodes[3].childNodes[1].classList.remove('show');
+
   })
 );
